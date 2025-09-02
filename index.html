@@ -3,25 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home - Small Business</title>
+  <title>Black Hills Bags</title>
   <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
 </head>
 <body>
-  <header>
+  <!-- Header / Nav -->
+  <header class="navbar">
+    <div class="nav-left">
+      <button class="menu-toggle" id="menu-btn">☰</button>
+    </div>
+    <div class="nav-center">
+      <img src="logo.png" alt="Black Hills Bags" class="nav-logo">
+    </div>
+    <div class="nav-right">
+      <button class="icon-btn">🔍</button>
+      <button class="icon-btn">🛒<span id="cart-count">0</span></button>
+    </div>
+  </header>
+
+  <!-- Side Menu -->
+  <aside id="side-menu" class="side-menu">
+    <button class="close-btn" id="close-menu">✕</button>
     <nav>
       <a href="index.html">Home</a>
-      <a href="about.html">About</a>
       <a href="products.html">Products</a>
-      <a href="cart.html">Cart</a>
+      <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </nav>
-  </header>
+  </aside>
+
+  <!-- Main Content -->
   <main>
-    <h1>Welcome to Our Store</h1>
-    <p>Minimalist small business website. Add your content here.</p>
+    <!-- Hero Logo -->
+    <section class="hero">
+      <img src="logo.png" alt="Company Logo" class="hero-logo">
+    </section>
+
+    <!-- Products -->
+    <section class="products">
+      <h2>Bags</h2>
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="bag-black.jpg" alt="Black Rifle Bag">
+          <h3>I-90 Rifle Bag - Black</h3>
+          <p>$99.99 USD</p>
+          <button class="btn">Add to Cart</button>
+        </div>
+        <div class="product-card sold-out">
+          <img src="bag-green.jpg" alt="Green Rifle Bag">
+          <h3>I-90 Rifle Bag - Camping Green</h3>
+          <p>$99.99 USD</p>
+          <button class="btn disabled" disabled>Sold Out</button>
+        </div>
+      </div>
+    </section>
   </main>
-  <footer>
-    <p>&copy; 2025 Small Business</p>
-  </footer>
 </body>
 </html>
