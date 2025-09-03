@@ -18,26 +18,21 @@
     </div>
     <div class="nav-right">
       <button class="icon-btn">🔍</button>
-      <!-- Shopping Cart Button -->
+      <!-- Inline Shopping Cart Button -->
 <a href="/cart" class="cart-button">
-  <img src="shopping_bag_emoji.png" alt="Cart" width="32" height="32">
+  <img src="shopping_bag_emoji.png" alt="Cart">
 </a>
 
-<!-- Example CSS (optional, for styling) -->
+<!-- Optional CSS -->
 <style>
-.cart-button {
-  display: inline-block;
-  padding: 8px;
-  border: none;
-  background: none;
-  cursor: pointer;
-}
 .cart-button img {
-  width: 32px;
-  height: 32px;
+  width: 28px;   /* adjust size to fit your header */
+  height: 28px;
+  vertical-align: middle;
 }
-.cart-button:hover img {
-  opacity: 0.7; /* subtle hover effect */
+.cart-button {
+  margin-left: 16px;  /* space from other menu items */
+  text-decoration: none;
 }
 </style>
         <span id="cart-count">0</span></button>
