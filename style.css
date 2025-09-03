@@ -39,18 +39,19 @@ body {
 .side-menu {
   position: fixed;
   top: 0;
-  left: -250px; /* hidden by default */
+  left: 0; /* start at left edge */
   width: 250px;
   height: 100%;
   background: #f9f9f9;
   box-shadow: 2px 0 5px rgba(0,0,0,0.2);
-  transition: left 0.3s ease;
+  transform: translateX(-100%); /* fully hidden off-screen */
+  transition: transform 0.3s ease;
   padding: 1rem;
   z-index: 2000;
 }
 
 .side-menu.active {
-  left: 0; /* slide in when active */
+  transform: translateX(0); /* slide in */
 }
 
 .side-menu nav a {
