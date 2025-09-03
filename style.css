@@ -39,7 +39,7 @@ body {
 .side-menu {
   position: fixed;
   top: 0;
-  left: -250px;
+  left: -250px; /* hidden by default */
   width: 250px;
   height: 100%;
   background: #f9f9f9;
@@ -49,8 +49,8 @@ body {
   z-index: 2000;
 }
 
-.side-menu.open {
-  left: 0;
+.side-menu.active {
+  left: 0; /* slide in when active */
 }
 
 .side-menu nav a {
@@ -67,6 +67,25 @@ body {
   font-size: 1.5rem;
   float: right;
   cursor: pointer;
+}
+
+/* OVERLAY */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 1500;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* HERO */
