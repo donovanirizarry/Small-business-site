@@ -59,28 +59,6 @@ body {
   justify-content: center;
 }
 
-/* 🔍 Search bar styling */
-.search-bar {
-  padding: 6px 10px;
-  border: 1px solid #ccc;
-  border-radius: 20px;
-  outline: none;
-  font-size: 14px;
-  background-color: white;
-  color: #111;
-  width: 0;
-  opacity: 0;
-  pointer-events: none;  /* hidden until active */
-  transition: all 0.3s ease;
-}
-
-/* When active (set by JS) */
-.search-bar.active {
-  width: 180px;
-  opacity: 1;
-  pointer-events: auto;
-}
-
 /* Cart logo sizing */
 .cart-logo {
   width: 28px;
@@ -88,3 +66,108 @@ body {
   object-fit: contain;
   display: block;
 }
+
+/* SIDE MENU */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: 0; /* start at left edge */
+  width: 250px;
+  height: 100%;
+  background: #f9f9f9;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+  transform: translateX(-100%); /* fully hidden off-screen */
+  transition: transform 0.3s ease;
+  padding: 1rem;
+  z-index: 2000;
+}
+
+.side-menu.active {
+  transform: translateX(0); /* slide in */
+}
+
+.side-menu nav a {
+  display: block;
+  margin: 1rem 0;
+  text-decoration: none;
+  color: #111;
+  font-weight: bold;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  float: right;
+  cursor: pointer;
+}
+
+/* OVERLAY */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 1500;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.hero-logo {
+  display: block;
+  margin: 40px auto;  /* center + spacing */
+  width: 400px;       /* larger on desktop */
+  max-width: 90%;     /* scale for mobile */
+  height: auto;
+}
+
+/* PRODUCTS */
+.products {
+  padding: 1rem;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  text-align: center;
+}
+
+.product-card img {
+  max-width: 100%;
+  height: auto;
+}
+
+.btn {
+  background: black;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  margin-top: 0.5rem;
+  cursor: pointer;
+}
+
+.btn.disabled {
+  background: #aaa;
+  cursor: not-allowed;
+} 
