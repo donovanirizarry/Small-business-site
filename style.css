@@ -47,6 +47,29 @@
   margin-left: 1rem;
 }
 
+/* Make nav-right a flex container */
+.nav-right {
+  display: flex;
+  align-items: center;   /* ensures vertical centering */
+  gap: 1rem;             /* space between icons */
+}
+
+/* Normalize icon buttons and logo */
+.icon-btn {
+  font-size: 1.5rem;     /* match size with cart logo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Cart logo sizing */
+.cart-logo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  display: block;
+}
+
 /* SIDE MENU */
 .side-menu {
   position: fixed;
@@ -150,26 +173,4 @@
 .btn.disabled {
   background: #aaa;
   cursor: not-allowed;
-}
-/* Make nav-right a flex container */
-.nav-right {
-  display: flex;
-  align-items: center;   /* ensures vertical centering */
-  gap: 1rem;             /* space between icons */
-}
-
-/* Normalize icon buttons and logo */
-.icon-btn {
-  font-size: 1.5rem;     /* match size with cart logo */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Cart logo sizing */
-.cart-logo {
-  width: 28px;
-  height: 28px;
-  object-fit: contain;
-  display: block;
 }
