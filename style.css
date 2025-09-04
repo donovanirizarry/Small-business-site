@@ -1,4 +1,4 @@
- body {
+body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: #fff;
@@ -15,21 +15,25 @@
   padding: 0.5rem 1rem;
   position: sticky;
   top: 0;
+  z-index: 1000;
 }
 
 /* Position nav-left and nav-right at edges */
-.nav-left, .nav-right {
+.nav-left {
   position: absolute;
   top: 50%;
+  left: 1rem;
   transform: translateY(-50%);
 }
 
-.nav-left {
-  left: 1rem;
-}
-
 .nav-right {
+  position: absolute;
+  top: 50%;
   right: 1rem;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;   /* ensures vertical centering */
+  gap: 1rem;             /* space between icons */
 }
 
 .nav-logo {
@@ -47,14 +51,7 @@
   margin-left: 1rem;
 }
 
-/* Make nav-right a flex container */
-.nav-right {
-  display: flex;
-  align-items: center;   /* ensures vertical centering */
-  gap: 1rem;             /* space between icons */
-}
-
-/* Normalize icon buttons and logo */
+/* Normalize icon buttons */
 .icon-btn {
   font-size: 1.5rem;     /* match size with cart logo */
   display: flex;
@@ -173,4 +170,4 @@
 .btn.disabled {
   background: #aaa;
   cursor: not-allowed;
-}
+} 
