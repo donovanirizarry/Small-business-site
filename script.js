@@ -26,12 +26,11 @@ const searchToggle = document.getElementById("search-toggle");
 const searchBar = document.getElementById("search-bar");
 
 searchToggle.addEventListener("click", () => {
-  // Toggle search bar visibility
-  if (searchBar.style.display === "none") {
-    searchBar.style.display = "inline-block";
+  searchBar.classList.toggle("active");
+
+  if (searchBar.classList.contains("active")) {
     searchBar.focus();
   } else {
-    searchBar.style.display = "none";
     searchBar.value = ""; 
     filterProducts(""); // reset product list
   }
