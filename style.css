@@ -33,7 +33,8 @@
 }
 
 .nav-logo {
-  height: 80px;   /* make logo bigger */
+  height: 80px;   /* adjust size */
+  width: auto;    /* keep proportions */
   display: block;
 }
 
