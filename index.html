@@ -13,29 +13,19 @@
     <div class="nav-left">
       <button class="menu-toggle" id="menu-btn">☰</button>
     </div>
+
     <div class="nav-center">
-      <img src="0025BAD3-5B3D-4AAF-B183-51486648FC9A.png" alt="Black Hills Bags" class="nav-logo">
+      <!-- ✅ Navbar logo points to images/logo.png -->
+      <img src="images/logo.png" alt="Black Hills Bags Logo" class="nav-logo">
     </div>
+
     <div class="nav-right">
       <button class="icon-btn">🔍</button>
-      <!-- Inline Shopping Cart Button -->
+
+      <!-- Shopping Cart Button -->
       <a href="/cart" class="cart-button">
         <img src="images/shopping_bag_emoji.png" alt="Cart">
       </a>
-
-      <!-- Optional CSS just for the cart button -->
-      <style>
-        .cart-button img {
-          width: 28px;   /* adjust size to fit your header */
-          height: 28px;
-          vertical-align: middle;
-        }
-        .cart-button {
-          margin-left: 16px;  /* space from other menu items */
-          text-decoration: none;
-        }
-      </style>
-
       <span id="cart-count">0</span>
     </div>
   </header>
@@ -58,7 +48,8 @@
   <main>
     <!-- Hero Logo -->
     <section class="hero">
-      <img src="logo.png" alt="Company Logo" class="hero-logo">
+      <!-- ✅ Hero logo also points to images/logo.png -->
+      <img src="images/logo.png" alt="Company Logo" class="hero-logo">
     </section>
 
     <!-- Products -->
@@ -66,13 +57,13 @@
       <h2>Bags</h2>
       <div class="product-grid">
         <div class="product-card">
-          <img src="bag-black.jpg" alt="Black Rifle Bag">
+          <img src="images/bag-black.jpg" alt="Black Rifle Bag">
           <h3>I-90 Rifle Bag - Black</h3>
           <p>$99.99 USD</p>
           <button class="btn">Add to Cart</button>
         </div>
         <div class="product-card sold-out">
-          <img src="bag-green.jpg" alt="Green Rifle Bag">
+          <img src="images/bag-green.jpg" alt="Green Rifle Bag">
           <h3>I-90 Rifle Bag - Camping Green</h3>
           <p>$99.99 USD</p>
           <button class="btn disabled" disabled>Sold Out</button>
