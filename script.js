@@ -21,6 +21,7 @@ closeBtn.addEventListener("click", closeMenu);
 
 // Close by clicking overlay
 overlay.addEventListener("click", closeMenu);
+}
 // Search toggle
 const searchToggle = document.getElementById("search-toggle");
 const searchBar = document.getElementById("search-bar");
