@@ -21,3 +21,19 @@ closeBtn.addEventListener("click", closeMenu);
 
 // Close by clicking overlay
 overlay.addEventListener("click", closeMenu);
+
+
+// ===============================
+// 🔍 Search toggle
+// ===============================
+const searchBtn = document.getElementById("search-btn");
+const searchInput = document.getElementById("search-input");
+
+if (searchBtn && searchInput) {
+  searchBtn.addEventListener("click", () => {
+    searchInput.classList.toggle("active");
+    if (searchInput.classList.contains("active")) {
+      searchInput.focus();
+    }
+  });
+}
