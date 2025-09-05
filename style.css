@@ -61,6 +61,7 @@ body {
   height: 28px;
   object-fit: contain;
   display: block;
+  filter: brightness(0) invert(1); /* turn black -> white */
 }
 
 /* Cart logo sizing */
