@@ -170,4 +170,20 @@ body {
 .btn.disabled {
   background: #aaa;
   cursor: not-allowed;
-} 
+}
+
+/* 🔍 SEARCH */
+#search-input {
+  display: none;              /* hidden by default */
+  padding: 6px 10px;
+  margin-left: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: #111;
+}
+
+#search-input.active {
+  display: inline-block;      /* show when toggled */
+  background: #fff;           /* white input field */
+}
