@@ -35,15 +35,5 @@ if (searchBtn && searchInput) {
     if (searchInput.classList.contains("active")) {
       searchInput.focus();
     }
-    
-// Close search function
-function closeSearch() {
- searchInput.classList.remove("active");
-  overlay.classList.remove("active");
-}
-    
-// Close by clicking overlay
-overlay.addEventListener("click", closeSearch);
-    }
   });
 }
