@@ -3,19 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact - Small Business</title>
+  <title>Black Hills Bags</title>
   <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
 </head>
 <body>
-  <header>
+  <!-- Header / Nav -->
+  <header class="navbar">
+    <div class="nav-left">
+      <button class="menu-toggle" id="menu-btn">☰</button>
+    </div>
+
+    <div class="nav-center">
+      <img src="0025BAD3-5B3D-4AAF-B183-51486648FC9A.png" alt="Black Hills Bags Logo" class="nav-logo">
+    </div>
+
+    <div class="nav-right">
+  <!-- 🔍 Search button with PNG -->
+  <button id="search-btn" class="icon-btn" aria-label="Search">
+    <img src="IMG_3598.png" alt="Search" class="search-logo">
+  </button>
+
+  <!-- Hidden search input -->
+  <input type="text" id="search-input" placeholder="Search products...">
+
+  <!-- 🛒 Cart -->
+  <a href="/cart" class="cart-button" aria-label="Cart">
+    <img src="F483AF78-0FCE-4B66-AC25-64F9D560CB20.png" alt="Cart" class="cart-logo">
+  </a>
+  <span id="cart-count">0</span>
+</div>
+</header>
+
+  <!-- Side Menu -->
+  <aside id="side-menu" class="side-menu">
+    <button class="close-btn" id="close-menu">✕</button>
     <nav>
       <a href="index.html">Home</a>
-      <a href="about.html">About</a>
       <a href="products.html">Products</a>
-      <a href="cart.html">Cart</a>
+      <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </nav>
-  </header>
+  </aside>
+
+  <!-- Overlay -->
+  <div id="overlay" class="overlay"></div>
+
   <main>
     <h1>Contact Us</h1>
     <form>
