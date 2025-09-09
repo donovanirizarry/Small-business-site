@@ -34,6 +34,8 @@ if (searchBtn && searchInput) {
     searchInput.classList.toggle("active");
     if (searchInput.classList.contains("active")) {
       searchInput.focus();
+// Close by clicking overlay
+overlay.addEventListener("click", closeMenu);
     }
   });
 }
