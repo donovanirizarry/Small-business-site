@@ -164,10 +164,10 @@ body {
 }
 
 .btn {
-  background: black;
-  color: white;
+  background: white;
+  color: black;
   padding: 0.5rem 1rem;
-  border: none;
+  border: 1px solid #ddd;
   margin-top: 0.5rem;
   cursor: pointer;
 }
