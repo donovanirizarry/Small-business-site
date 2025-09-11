@@ -1,8 +1,15 @@
-// Side menu toggle
+// ===============================
+// 📂 Side menu toggle
+// ===============================
 const menuBtn = document.getElementById("menu-btn");
 const sideMenu = document.getElementById("side-menu");
 const closeBtn = document.getElementById("close-menu");
 const overlay = document.getElementById("overlay");
+
+function closeMenu() {
+  sideMenu.classList.remove("active");
+  overlay.classList.remove("active");
+}
 
 // Open menu
 menuBtn.addEventListener("click", () => {
@@ -10,18 +17,8 @@ menuBtn.addEventListener("click", () => {
   overlay.classList.add("active");
 });
 
-// Close menu function
-function closeMenu() {
-  sideMenu.classList.remove("active");
-  overlay.classList.remove("active");
-}
-
 // Close with X button
 closeBtn.addEventListener("click", closeMenu);
-
-// Close by clicking overlay
-overlay.addEventListener("click", closeMenu);
-
 
 // ===============================
 // 🔍 Search toggle
@@ -29,11 +26,27 @@ overlay.addEventListener("click", closeMenu);
 const searchBtn = document.getElementById("search-btn");
 const searchInput = document.getElementById("search-input");
 
-if (searchBtn && searchInput) {
-  searchBtn.addEventListener("click", () => {
-    searchInput.classList.toggle("active");
-    if (searchInput.classList.contains("active")) {
-      searchInput.focus();
-    }
-  });
+function closeSearch() {
+  searchInput.classList.remove("active");
+  overlay.classList.remove("active");
 }
+
+if (searchBtn && searchInput) {
+  // Open search
+  searchBtn.addEventListener("click", () => {
+    searchInput.classList.add("active");
+    overlay.classList.add("active");
+    searchInput.focus();
+  });
+
+  // Close search when input loses focus (Done button)
+  searchInput.addEventListener("blur", closeSearch);
+}
+
+// ===============================
+// 🎯 Overlay click closes both menu + search
+// ===============================
+overlay.addEventListener("click", () => {
+  closeMenu();
+  closeSearch();
+});
