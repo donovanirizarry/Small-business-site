@@ -55,7 +55,7 @@ body {
   padding: 0;               /* remove default button padding */
 }
 
-/* ✅ Search logo sizing (new) */
+/* ✅ Search logo sizing */
 .search-logo {
   width: 28px;
   height: 28px;
@@ -177,18 +177,33 @@ body {
   cursor: not-allowed;
 }
 
-/* 🔍 SEARCH */
+/* 🔍 SEARCH (with animation + expand) */
 #search-input {
-  display: none;              /* hidden by default */
+  opacity: 0;
+  transform: translateY(-50%) translateY(-10px); /* hidden upward */
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease, width 0.3s ease;
+
+  position: absolute;
+  right: 60px;        /* sits before cart */
+  top: 50%;
   padding: 6px 10px;
-  margin-left: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 1rem;
   color: #111;
+  background: #fff;
+  z-index: 1600;
+
+  width: 0;           /* collapsed when hidden */
+  max-width: 50vw;    /* responsive limit */
+  overflow: hidden;   /* hide text until expanded */
 }
 
+/* Visible (active) */
 #search-input.active {
-  display: inline-block;      /* show when toggled */
-  background: #fff;           /* white input field */
+  opacity: 1;
+  transform: translateY(-50%) translateY(0);
+  pointer-events: auto;
+  width: 180px;       /* expanded size */
 }
