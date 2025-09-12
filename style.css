@@ -177,33 +177,44 @@ body {
   cursor: not-allowed;
 }
 
-/* 🔍 SEARCH (with animation + expand) */
-#search-input {
-  opacity: 0;
-  transform: translateY(-50%) translateY(-10px); /* hidden upward */
-  pointer-events: none;
-  transition: opacity 0.3s ease, transform 0.3s ease, width 0.3s ease;
-
-  position: absolute;
-  right: 60px;        /* sits before cart */
-  top: 50%;
-  padding: 6px 10px;
-  border: 1px solid #ccc;
-  border-radius: 0px;
-  font-size: 1rem;
-  color: #111;
-  background: #fff;
-  z-index: 1600;
-
-  width: 0;           /* collapsed when hidden */
-  max-width: 50vw;    /* responsive limit */
-  overflow: hidden;   /* hide text until expanded */
+/* 🔍 SEARCH BAR */
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 1rem auto;
+  position: relative;
+  max-width: 600px;
 }
 
-/* Visible (active) */
-#search-input.active {
-  opacity: 1;
-  transform: translateY(-50%) translateY(0);
-  pointer-events: auto;
-  width: 300px;       /* expanded size */
+.search-input {
+  width: 100%;
+  padding: 0.6rem 2.5rem 0.6rem 0.8rem; /* space for icons */
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  font-size: 1rem;
+  outline: none;
+  background: #fff;
+  color: #111;
+}
+
+.search-btn {
+  position: absolute;
+  right: 2.2rem; /* before X button */
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #1c1c1c; /* match navbar theme */
+}
+
+.close-btn-search {
+  position: absolute;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #1c1c1c;
 }
