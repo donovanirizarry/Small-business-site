@@ -184,15 +184,20 @@ body {
 .btn {
   background: white;
   color: black;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1.5rem;   /* bigger buttons */
+  font-size: 1.1rem;         /* larger text */
   border: 1px solid #ddd;
   margin-top: 0.25rem;
   cursor: pointer;
+  min-width: 160px;          /* ✅ same width for all buttons */
+  text-align: center;
+  display: inline-block;     /* ensures consistent sizing */
 }
 
 .btn.disabled {
   background: #aaa;
   cursor: not-allowed;
+  min-width: 160px;          /* ✅ enforce same width for Sold Out */
 }
 
 /* 🔍 SEARCH (with animation + expand) */
