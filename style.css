@@ -184,7 +184,7 @@ body {
 .btn {
   background: white;
   color: black;
-  padding: 1rem 2.0rem;   /* bigger buttons */
+  padding: 1rem 1.5rem;   /* bigger buttons */
   font-size: 1rem;         /* larger text */
   border: 1px solid #000000;
   margin-top: 0.25rem;
