@@ -153,8 +153,8 @@ body {
 }
 
 .product-card {
-  border: 1px solid #ddd;
-  padding: 1rem;
+  border: 0px solid #ddd;
+  padding: .5rem;
   display: flex;
   flex-direction: column;
 }
