@@ -189,7 +189,7 @@ body {
   border: 1px solid #000000;
   margin-top: 0.25rem;
   cursor: pointer;
-  min-width: 160px;          /* ✅ same width for all buttons */
+  min-width: 180px;          /* ✅ same width for all buttons */
   text-align: center;
   display: inline-block;     /* ensures consistent sizing */
 }
@@ -197,7 +197,7 @@ body {
 .btn.disabled {
   background: #aaa;
   cursor: not-allowed;
-  min-width: 160px;          /* ✅ enforce same width for Sold Out */
+  min-width: 180px;          /* ✅ enforce same width for Sold Out */
 }
 
 /* 🔍 SEARCH (with animation + expand) */
