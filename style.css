@@ -1,79 +1,330 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Black Hills Bags</title>
-  <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
-</head>
-<body>
-  <!-- Header / Nav -->
-  <header class="navbar">
-    <div class="nav-left">
-      <button class="menu-toggle" id="menu-btn">☰</button>
-    </div>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fff;
+  color: #111;
+}
 
-    <div class="nav-center">
-      <!-- ✅ Logo links to root -->
-      <a href="/">
-        <img src="0025BAD3-5B3D-4AAF-B183-51486648FC9A.png" alt="Black Hills Bags Logo" class="nav-logo">
-      </a>
-    </div>
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: center;   /* center contents */
+  align-items: center;
+  background: #1c1c1c;
+  color: white;
+  padding: 0.5rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 
-    <div class="nav-right">
-      <!-- 🔍 Search button with PNG -->
-      <button id="search-btn" class="icon-btn" aria-label="Search">
-        <img src="IMG_3598.png" alt="Search" class="search-logo">
-      </button>
+/* Position nav-left and nav-right at edges */
+.nav-left {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+}
 
-      <!-- Hidden search input -->
-      <input type="text" id="search-input" placeholder="Search products...">
+.nav-right {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;   /* ensures vertical centering */
+  gap: 1rem;             /* space between icons */
+}
 
-      <!-- 🛒 Cart -->
-      <a href="/cart" class="cart-button" aria-label="Cart">
-        <img src="F483AF78-0FCE-4B66-AC25-64F9D560CB20.png" alt="Cart" class="cart-logo">
-      </a>
-      <span id="cart-count">0</span>
-    </div>
-  </header>
+.nav-logo {
+  height: 90px;   /* adjust size */
+  width: auto;    /* keep proportions */
+  display: block;
+}
 
-  <!-- Side Menu -->
-  <aside id="side-menu" class="side-menu">
-    <button class="close-btn" id="close-menu">✕</button>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/products.html">Products</a>
-      <a href="/about.html">About</a>
-      <a href="/contact.html">Contact</a>
-    </nav>
-  </aside>
+.icon-btn, .menu-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2.1rem;
+  cursor: pointer;
+  margin-left: 1rem;
+  display: flex;            /* center the PNG inside */
+  align-items: center;
+  justify-content: center;
+  padding: 0;               /* remove default button padding */
+}
 
-  <!-- Overlay -->
-  <div id="overlay" class="overlay"></div>
+/* ✅ Search logo sizing */
+.search-logo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  display: block;
+  filter: brightness(0) invert(1); /* turn black -> white */
+}
 
-  <main>
-    <h1>Contact</h1>
-    <form>
-      <!-- Name + Email side by side -->
-      <div class="form-row">
-        <input type="text" id="name" name="name" placeholder="Name">
-        <input type="email" id="email" name="email" placeholder="Email *" required>
-      </div>
+/* Cart logo sizing */
+.cart-logo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  display: block;
+}
 
-      <!-- Phone full width -->
-      <input type="tel" id="phone" name="phone" placeholder="Phone number">
+/* SIDE MENU */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: 0; /* start at left edge */
+  width: 250px;
+  height: 100%;
+  background: #f9f9f9;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+  transform: translateX(-100%); /* fully hidden off-screen */
+  transition: transform 0.3s ease;
+  padding: 1rem;
+  z-index: 2000;
+}
 
-      <!-- Comment full width -->
-      <textarea id="message" name="message" placeholder="Comment"></textarea>
+.side-menu.active {
+  transform: translateX(0); /* slide in */
+}
 
-      <!-- Submit button -->
-      <button type="submit">Send</button>
-    </form>
-  </main>
+.side-menu nav a {
+  display: block;
+  margin: 1rem 0;
+  text-decoration: none;
+  color: #111;
+  font-weight: bold;
+}
 
-  <footer>
-    <p>&copy; 2025, Black Hills Bags</p>
-  </footer>
-</body>
-</html>
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  float: right;
+  cursor: pointer;
+}
+
+/* OVERLAY */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 1500;
+}
+
+.overlay.active {
+  opacity: 0;
+  visibility: visible;
+}
+
+/* HERO */
+.hero {
+  width: 100%;
+  height: 300px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.hero-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* crop the sides if needed */
+  display: block;
+}
+
+/* PRODUCTS */
+.products {
+  padding: 1rem;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: .2rem;
+  margin-top: 1rem;
+}
+
+.product-card {
+  border: 0px solid #ddd;
+  padding: .5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Product title + price left-aligned with tighter spacing */
+.product-card h3 {
+  text-align: left;
+  margin: 0 0 0.25rem 0; /* small gap below */
+}
+
+.product-card p {
+  text-align: left;
+  margin: 0 0 0.5rem 0; /* slightly more gap before button */
+}
+
+/* Center ALL product buttons (Add to Cart + Sold Out) */
+.product-card .btn {
+  align-self: center;
+  margin-top: 0.25rem;
+}
+
+.product-card img {
+  max-width: 100%;
+  height: auto;
+}
+
+.btn {
+  background: white;
+  color: black;
+  padding: .8rem 2.5rem;   /* bigger buttons */
+  font-size: .8rem;         /* larger text */
+  border: 1px solid #000000;
+  margin-top: 0.25rem;
+  cursor: pointer;
+  min-width: 180px;          /* ✅ same width for all buttons */
+  text-align: center;
+  display: inline-block;     /* ensures consistent sizing */
+}
+
+.btn.disabled {
+  background: #aaa;
+  cursor: not-allowed;
+  min-width: 180px;          /* ✅ enforce same width for Sold Out */
+}
+
+/* 🔍 SEARCH (with animation + expand) */
+#search-input {
+  opacity: 0;
+  transform: translateY(-50%) translateY(-10px); /* hidden upward */
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease, width 0.3s ease;
+
+  position: absolute;
+  right: 60px;        /* sits before cart */
+  top: 50%;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 0px;
+  font-size: 1rem;
+  color: #111;
+  background: #fff;
+  z-index: 1600;
+
+  width: 0;           /* collapsed when hidden */
+  max-width: 50vw;    /* responsive limit */
+  overflow: hidden;   /* hide text until expanded */
+}
+
+/* Visible (active) */
+#search-input.active {
+  opacity: 1;
+  transform: translateY(-50%) translateY(0);
+  pointer-events: auto;
+  width: 300px;       /* expanded size */
+}
+
+/* ============================= */
+/* ✅ CONTACT FORM LAYOUT FIXES */
+/* ============================= */
+
+form {
+  max-width: 600px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-row input {
+  flex: 1;
+}
+
+input, textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  width: 100%;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-actions {
+  text-align: center;
+}
+
+.form-actions button {
+  padding: 0.75rem 2rem;
+  border: 1px solid #111;
+  background: #111;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.form-actions button:hover {
+  background: #333;
+}
+
+/* ============================= */
+/* ✅ SUBSCRIBE SECTION STYLES */
+/* ============================= */
+
+.subscribe-section {
+  max-width: 600px;
+  margin: 3rem auto;
+  text-align: center;
+}
+
+.subscribe-section h2 {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 0.75rem;
+}
+
+.subscribe-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.subscribe-form input {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  flex: 1;
+  max-width: 300px;
+  font-size: 1rem;
+}
+
+.subscribe-form button {
+  background: none;
+  border: 1px solid #ccc;
+  border-left: none;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.subscribe-form button:hover {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
