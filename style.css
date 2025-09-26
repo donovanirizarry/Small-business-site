@@ -312,7 +312,7 @@ textarea {
 .subscribe-form {
   display: flex;
   justify-content: flex-start; /* Align form elements to left */
-  align-items: center;
+  align-items: left;
 }
 
 .subscribe-form input {
