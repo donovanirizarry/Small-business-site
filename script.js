@@ -11,14 +11,16 @@ function closeMenu() {
   overlay.classList.remove("active");
 }
 
-// Open menu
-menuBtn.addEventListener("click", () => {
-  sideMenu.classList.add("active");
-  overlay.classList.add("active");
-});
+if (menuBtn && sideMenu && closeBtn && overlay) {
+  // Open menu
+  menuBtn.addEventListener("click", () => {
+    sideMenu.classList.add("active");
+    overlay.classList.add("active");
+  });
 
-// Close with X button
-closeBtn.addEventListener("click", closeMenu);
+  // Close with X button
+  closeBtn.addEventListener("click", closeMenu);
+}
 
 // ===============================
 // 🔍 Search toggle
@@ -32,21 +34,50 @@ function closeSearch() {
 }
 
 if (searchBtn && searchInput) {
-  // Open search
   searchBtn.addEventListener("click", () => {
     searchInput.classList.add("active");
     overlay.classList.add("active");
     searchInput.focus();
   });
 
-  // Close search when input loses focus (Done button)
   searchInput.addEventListener("blur", closeSearch);
 }
 
 // ===============================
 // 🎯 Overlay click closes both menu + search
 // ===============================
-overlay.addEventListener("click", () => {
-  closeMenu();
-  closeSearch();
-});
+if (overlay) {
+  overlay.addEventListener("click", () => {
+    closeMenu();
+    closeSearch();
+  });
+}
+
+// ===============================
+// 🛒 Empty cart message
+// ===============================
+const cartItems = document.getElementById("cart-items");
+const emptyCartMessage = document.getElementById("empty-cart-message");
+
+if (cartItems && emptyCartMessage && !cartItems.hasChildNodes()) {
+  emptyCartMessage.style.display = "block";
+}
+
+// ===============================
+// 📬 Subscribe form feedback
+// ===============================
+const subscribeForm = document.getElementById("subscribe-form");
+const successMessage = document.getElementById("subscribe-success");
+
+if (subscribeForm && successMessage) {
+  subscribeForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+    subscribeForm.reset();
+    successMessage.style.display = "block";
+
+    // Optional: hide after a few seconds
+    // setTimeout(() => {
+    //   successMessage.style.display = "none";
+    // }, 4000);
+  });
+}
