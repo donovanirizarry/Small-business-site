@@ -53,24 +53,17 @@
   <div id="overlay" class="overlay"></div>
 
   <main>
-    <h1>Your Shopping Cart</h1>
+    <!-- Cart Items -->
     <div id="cart-items"></div>
     <p id="cart-total"></p>
+
+    <!-- Empty Cart Message + Button -->
+    <div id="empty-cart-message" style="display: none; text-align: center; margin-top: 2rem;">
+      <p>Your cart is empty</p>
+      <a href="/" class="btn">Continue Shopping</a>
+    </div>
   </main>
 
-
-
-
-
-
-
-
-
-
-
-
-
-  
   <footer>
     <hr>
     <section class="subscribe-section">
@@ -82,5 +75,18 @@
     </section>
     <p>&copy; 2025, Black Hills Bags</p>
   </footer>
+
+  <script>
+    // Sample logic to toggle empty cart message (assumes script.js handles real cart logic)
+    document.addEventListener("DOMContentLoaded", function () {
+      const cartItems = document.getElementById("cart-items");
+      const emptyCartMessage = document.getElementById("empty-cart-message");
+
+      // If no cart items are present, show empty message
+      if (!cartItems.hasChildNodes()) {
+        emptyCartMessage.style.display = "block";
+      }
+    });
+  </script>
 </body>
 </html>
