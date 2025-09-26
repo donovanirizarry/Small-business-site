@@ -8,7 +8,7 @@ body {
 /* NAVBAR */
 .navbar {
   display: flex;
-  justify-content: center;   /* center contents */
+  justify-content: center;
   align-items: center;
   background: #1c1c1c;
   color: white;
@@ -18,7 +18,6 @@ body {
   z-index: 1000;
 }
 
-/* Position nav-left and nav-right at edges */
 .nav-left {
   position: absolute;
   top: 50%;
@@ -32,13 +31,13 @@ body {
   right: 1rem;
   transform: translateY(-50%);
   display: flex;
-  align-items: center;   /* ensures vertical centering */
-  gap: 1rem;             /* space between icons */
+  align-items: center;
+  gap: 1rem;
 }
 
 .nav-logo {
-  height: 90px;   /* adjust size */
-  width: auto;    /* keep proportions */
+  height: 90px;
+  width: auto;
   display: block;
 }
 
@@ -49,22 +48,20 @@ body {
   font-size: 2.1rem;
   cursor: pointer;
   margin-left: 1rem;
-  display: flex;            /* center the PNG inside */
+  display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0;               /* remove default button padding */
+  padding: 0;
 }
 
-/* ✅ Search logo sizing */
 .search-logo {
   width: 28px;
   height: 28px;
   object-fit: contain;
   display: block;
-  filter: brightness(0) invert(1); /* turn black -> white */
+  filter: brightness(0) invert(1);
 }
 
-/* Cart logo sizing */
 .cart-logo {
   width: 28px;
   height: 28px;
@@ -76,19 +73,19 @@ body {
 .side-menu {
   position: fixed;
   top: 0;
-  left: 0; /* start at left edge */
+  left: 0;
   width: 250px;
   height: 100%;
   background: #f9f9f9;
   box-shadow: 2px 0 5px rgba(0,0,0,0.2);
-  transform: translateX(-100%); /* fully hidden off-screen */
+  transform: translateX(-100%);
   transition: transform 0.3s ease;
   padding: 1rem;
   z-index: 2000;
 }
 
 .side-menu.active {
-  transform: translateX(0); /* slide in */
+  transform: translateX(0);
 }
 
 .side-menu nav a {
@@ -138,7 +135,7 @@ body {
 .hero-logo {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* crop the sides if needed */
+  object-fit: cover;
   display: block;
 }
 
@@ -161,18 +158,16 @@ body {
   flex-direction: column;
 }
 
-/* Product title + price left-aligned with tighter spacing */
 .product-card h3 {
   text-align: left;
-  margin: 0 0 0.25rem 0; /* small gap below */
+  margin: 0 0 0.25rem 0;
 }
 
 .product-card p {
   text-align: left;
-  margin: 0 0 0.5rem 0; /* slightly more gap before button */
+  margin: 0 0 0.5rem 0;
 }
 
-/* Center ALL product buttons (Add to Cart + Sold Out) */
 .product-card .btn {
   align-self: center;
   margin-top: 0.25rem;
@@ -186,31 +181,31 @@ body {
 .btn {
   background: white;
   color: black;
-  padding: .8rem 2.5rem;   /* bigger buttons */
-  font-size: .8rem;         /* larger text */
+  padding: .8rem 2.5rem;
+  font-size: .8rem;
   border: 1px solid #000000;
   margin-top: 0.25rem;
   cursor: pointer;
-  min-width: 180px;          /* ✅ same width for all buttons */
+  min-width: 180px;
   text-align: center;
-  display: inline-block;     /* ensures consistent sizing */
+  display: inline-block;
 }
 
 .btn.disabled {
   background: #aaa;
   cursor: not-allowed;
-  min-width: 180px;          /* ✅ enforce same width for Sold Out */
+  min-width: 180px;
 }
 
-/* 🔍 SEARCH (with animation + expand) */
+/* SEARCH */
 #search-input {
   opacity: 0;
-  transform: translateY(-50%) translateY(-10px); /* hidden upward */
+  transform: translateY(-50%) translateY(-10px);
   pointer-events: none;
   transition: opacity 0.3s ease, transform 0.3s ease, width 0.3s ease;
 
   position: absolute;
-  right: 60px;        /* sits before cart */
+  right: 60px;
   top: 50%;
   padding: 6px 10px;
   border: 1px solid #ccc;
@@ -220,23 +215,19 @@ body {
   background: #fff;
   z-index: 1600;
 
-  width: 0;           /* collapsed when hidden */
-  max-width: 50vw;    /* responsive limit */
-  overflow: hidden;   /* hide text until expanded */
+  width: 0;
+  max-width: 50vw;
+  overflow: hidden;
 }
 
-/* Visible (active) */
 #search-input.active {
   opacity: 1;
   transform: translateY(-50%) translateY(0);
   pointer-events: auto;
-  width: 300px;       /* expanded size */
+  width: 300px;
 }
 
-/* ============================= */
-/* ✅ CONTACT PAGE STYLING */
-/* ============================= */
-
+/* CONTACT PAGE */
 main h1 {
   text-align: center;
   font-size: 2rem;
@@ -292,15 +283,12 @@ textarea {
   background: #333;
 }
 
-/* ============================= */
-/* ✅ SUBSCRIBE SECTION STYLES */
-/* ============================= */
-
+/* SUBSCRIBE SECTION */
 .subscribe-section {
   max-width: 600px;
-  margin: 3rem 0;         /* Removed auto centering */
-  text-align: left;       /* Align text to the left */
-  padding-left: 1rem;     /* Optional spacing from left */
+  margin: 3rem 0;
+  text-align: left;
+  padding-left: 1rem;
 }
 
 .subscribe-section h2 {
@@ -311,8 +299,10 @@ textarea {
 
 .subscribe-form {
   display: flex;
-  justify-content: flex-start; /* Align form elements to left */
-  align-items: left;
+  justify-content: flex-start;
+  align-items: center;
+  max-width: 600px;
+  padding-left: 1rem;
 }
 
 .subscribe-form input {
@@ -339,4 +329,13 @@ textarea {
 .subscribe-form button:hover {
   background: #333;
   border-color: #333;
+}
+
+/* ✅ SUBSCRIBE SUCCESS MESSAGE */
+.subscribe-success {
+  color: green;
+  font-weight: 500;
+  margin-top: 0.75rem;
+  padding-left: 2rem;
+  font-size: 1rem;
 }
