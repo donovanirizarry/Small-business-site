@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Black Hills Bags</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
 </head>
 <body>
@@ -16,19 +16,19 @@
 
     <div class="nav-center">
       <a href="/">
-        <img src="0025BAD3-5B3D-4AAF-B183-51486648FC9A.png" alt="Black Hills Bags Logo" class="nav-logo">
+        <img src="0025BAD3-5B3D-4AAF-B183-51486648FC9A.png" alt="Black Hills Bags Logo" class="nav-logo" />
       </a>
     </div>
 
     <div class="nav-right">
       <button id="search-btn" class="icon-btn" aria-label="Search">
-        <img src="IMG_3598.png" alt="Search" class="search-logo">
+        <img src="IMG_3598.png" alt="Search" class="search-logo" />
       </button>
 
-      <input type="text" id="search-input" placeholder="Search products...">
+      <input type="text" id="search-input" placeholder="Search products..." />
 
       <a href="/cart" class="cart-button" aria-label="Cart">
-        <img src="F483AF78-0FCE-4B66-AC25-64F9D560CB20.png" alt="Cart" class="cart-logo">
+        <img src="F483AF78-0FCE-4B66-AC25-64F9D560CB20.png" alt="Cart" class="cart-logo" />
       </a>
       <span id="cart-count">0</span>
     </div>
@@ -53,7 +53,7 @@
     <div id="cart-items"></div>
     <p id="cart-total"></p>
 
-    <!-- Empty Cart Message + Button -->
+    <!-- Empty Cart Message -->
     <div id="empty-cart-message" style="display: none; text-align: center; margin-top: 2rem;">
       <p>Your cart is empty</p>
       <a href="/" class="btn">Continue Shopping</a>
@@ -61,45 +61,19 @@
   </main>
 
   <footer>
-    <hr>
+    <hr />
     <section class="subscribe-section">
       <h2>Subscribe to our emails</h2>
       <form class="subscribe-form" id="subscribe-form">
-        <input type="email" placeholder="Email" required>
+        <input type="email" placeholder="Email" required />
         <button type="submit">→</button>
       </form>
-      <!-- ✅ Subscription success message -->
+      <!-- ✅ Success message -->
       <p id="subscribe-success" class="subscribe-success" style="display: none;">
         ✅ Thanks for subscribing!
       </p>
     </section>
     <p>&copy; 2025, Black Hills Bags</p>
   </footer>
-
-  <script>
-    // Cart empty message logic
-    document.addEventListener("DOMContentLoaded", function () {
-      const cartItems = document.getElementById("cart-items");
-      const emptyCartMessage = document.getElementById("empty-cart-message");
-
-      if (!cartItems.hasChildNodes()) {
-        emptyCartMessage.style.display = "block";
-      }
-
-      // ✅ Subscription success message logic
-      const subscribeForm = document.getElementById("subscribe-form");
-      const successMessage = document.getElementById("subscribe-success");
-
-      subscribeForm.addEventListener("submit", function (e) {
-        e.preventDefault();
-
-        // Optionally, you could clear the form here
-        subscribeForm.reset();
-
-        // Show the success message
-        successMessage.style.display = "block";
-      });
-    });
-  </script>
 </body>
 </html>
