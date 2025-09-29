@@ -306,12 +306,12 @@ textarea {
 }
 
 .subscribe-form input {
-  padding: 0.75rem;
+  padding: 0rem;
   border: 1px solid #ccc;
   flex: 1;
   max-width: 300px;
   font-size: 1rem;
-  border-radius: 4px 0 0 4px;
+  border-radius: 0px 0 0 0px;
 }
 
 .subscribe-form button {
