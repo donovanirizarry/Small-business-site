@@ -288,7 +288,7 @@ textarea {
   max-width: 600px;
   margin: 3rem 0;
   text-align: left;
-  padding-left: 1rem;
+  padding-left: 0rem;
 }
 
 .subscribe-section h2 {
