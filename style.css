@@ -312,6 +312,7 @@ textarea {
   max-width: 300px;
   font-size: 1rem;
   border-radius: 0px 0 0 0px;
+  align-items: left;
 }
 
 .subscribe-form button {
