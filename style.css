@@ -300,7 +300,7 @@ textarea {
 .subscribe-form {
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: left;
   max-width: 600px;
   padding-left: 0rem;
 }
