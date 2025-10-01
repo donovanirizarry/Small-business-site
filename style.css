@@ -236,7 +236,7 @@ main h1 {
 }
 
 form {
-  max-width: 600px;
+  max-width: 580px;
   margin: 0 auto 3rem auto;
   display: flex;
   flex-direction: column;
