@@ -319,7 +319,7 @@ textarea {
 
 .subscribe-form button {
   background: #111;
-  border: 1px solid #111;
+  border: 0px solid #111;
   border-left: none;
   padding: 0.8rem 1.25rem;
   cursor: pointer;
