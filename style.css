@@ -299,8 +299,8 @@ textarea {
 
 .subscribe-form {
   display: flex;
-  flex-direction: row;          /* ✅ side by side */
-  align-items: center;          /* ✅ vertical alignment */
+  flex-direction: row;
+  align-items: center;
   justify-content: flex-start;
   max-width: 600px;
   gap: 0;
@@ -341,4 +341,121 @@ textarea {
   margin-top: 0.75rem;
   padding-left: 2rem;
   font-size: 1rem;
+}
+
+/* ----- FOOTER STYLING ----- */
+.footer {
+  text-align: center;
+  padding: 40px 20px;
+  background: #fff;
+  color: #111;
+  font-family: Arial, sans-serif;
+}
+
+.footer hr {
+  border: none;
+  border-top: 1px solid #e5e5e5;
+  margin-bottom: 30px;
+}
+
+/* Subscribe Section (Footer version) */
+.subscribe-section h2 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.subscribe-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  margin-bottom: 30px;
+}
+
+.subscribe-form input[type="email"] {
+  width: 240px;
+  padding: 10px 12px;
+  border: 1px solid #d8d8d8;
+  font-size: 14px;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+}
+
+.subscribe-form button {
+  padding: 10px 16px;
+  border: 1px solid #d8d8d8;
+  border-left: none;
+  background: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 0 4px 4px 0;
+}
+
+.subscribe-form button:hover {
+  background: #f5f5f5;
+}
+
+/* Country Section */
+.country-section {
+  margin-bottom: 20px;
+}
+
+.country-section label {
+  display: block;
+  font-size: 14px;
+  color: #111;
+  margin-bottom: 8px;
+}
+
+.country-select-wrapper {
+  display: inline-block;
+  position: relative;
+  border: 1px solid #d8d8d8;
+  border-radius: 4px;
+  padding: 8px 36px 8px 12px;
+  background: #fff;
+}
+
+.country-select-wrapper select {
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  color: #111;
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.country-select-wrapper .caret {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #888;
+  font-size: 16px;
+}
+
+/* Payment Icons */
+.payment-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 25px 0;
+}
+
+.payment-icons img {
+  height: 26px;
+  object-fit: contain;
+  filter: grayscale(20%);
+  opacity: 0.9;
+}
+
+/* Footer Text */
+.footer p {
+  font-size: 13px;
+  color: #555;
 }
