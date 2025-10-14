@@ -19,21 +19,21 @@
     </div>
 
     <div class="nav-right">
-  <!-- 🔍 Search button with PNG -->
-  <button id="search-btn" class="icon-btn" aria-label="Search">
-    <img src="IMG_3598.png" alt="Search" class="search-logo">
-  </button>
+      <!-- 🔍 Search button with PNG -->
+      <button id="search-btn" class="icon-btn" aria-label="Search">
+        <img src="IMG_3598.png" alt="Search" class="search-logo">
+      </button>
 
-  <!-- Hidden search input -->
-  <input type="text" id="search-input" placeholder="Search products...">
+      <!-- Hidden search input -->
+      <input type="text" id="search-input" placeholder="Search products...">
 
-  <!-- 🛒 Cart -->
-  <a href="/cart" class="cart-button" aria-label="Cart">
-    <img src="F483AF78-0FCE-4B66-AC25-64F9D560CB20.png" alt="Cart" class="cart-logo">
-  </a>
-  <span id="cart-count">0</span>
-</div>
-</header>
+      <!-- 🛒 Cart -->
+      <a href="/cart" class="cart-button" aria-label="Cart">
+        <img src="F483AF78-0FCE-4B66-AC25-64F9D560CB20.png" alt="Cart" class="cart-logo">
+      </a>
+      <span id="cart-count">0</span>
+    </div>
+  </header>
 
   <!-- Side Menu -->
   <aside id="side-menu" class="side-menu">
@@ -85,6 +85,7 @@
           <button class="btn">Add to cart</button>
         </div>
       </div>  
+
       <h2>Storage</h2>
       <div class="product-grid">
         <div class="product-card">
@@ -117,13 +118,41 @@
 
   <footer>
     <hr>
+    <!-- Subscribe -->
     <section class="subscribe-section">
       <h2>Subscribe to our emails</h2>
       <form class="subscribe-form">
         <input type="email" placeholder="Email" required>
         <button type="submit">→</button>
-      </form
+      </form>
     </section>
+
+    <!-- Country / Region -->
+    <section class="country-section">
+      <label for="country-select">Country/region</label>
+      <div class="country-select-wrapper">
+        <select id="country-select" name="country">
+          <option value="US|USD" selected>USD $ | United States</option>
+          <option value="CA|CAD">CAD $ | Canada</option>
+          <option value="GB|GBP">GBP £ | United Kingdom</option>
+          <option value="EU|EUR">EUR € | European Union</option>
+          <option value="AU|AUD">AUD $ | Australia</option>
+          <option value="JP|JPY">JPY ¥ | Japan</option>
+        </select>
+        <span class="caret">⌄</span>
+      </div>
+    </section>
+
+    <!-- Payment Icons -->
+    <section class="payment-icons">
+      <img src="images/amex.png" alt="American Express">
+      <img src="images/applepay.png" alt="Apple Pay">
+      <img src="images/discover.png" alt="Discover">
+      <img src="images/googlepay.png" alt="Google Pay">
+      <img src="images/mastercard.png" alt="Mastercard">
+      <img src="images/visa.png" alt="Visa">
+    </section>
+
     <p>&copy; 2025, Black Hills Bags</p>
   </footer>
 </body>
